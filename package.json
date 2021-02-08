@@ -1,0 +1,168 @@
+{
+  "name": "electon-desktop",
+  "version": "1.0.0",
+  "private": true,
+  "productName": "electon-desktop",
+  "description": "electon-desktop",
+  "main": "electron/main.js",
+  "author": "youn",
+  "license": "CC0-1.0",
+  "scripts": {
+    "-dev-": "-------------------开发环境-------------------",
+    "start": "node color && cross-env REACT_APP_ENV=local craco start",
+    "build:dev": "node color && cross-env REACT_APP_ENV=dev craco build",
+    "start:electron": "electron . ",
+    "-test-": "-------------------测试环境-------------------",
+    "build:test": "node color && cross-env REACT_APP_ENV=test craco build",
+    "dist-win:test": "yarn build:test && electron-builder --win --ia32",
+    "dist-mac:test": "yarn build:test && electron-builder --mac",
+    "-bug-": "-------------------bug修改环境-------------------",
+    "build:bug": "node color && cross-env REACT_APP_ENV=bug  craco build",
+    "-prod-": "-------------------生产环境-------------------",
+    "build:prod": "node color && cross-env REACT_APP_ENV=prod craco build",
+    "dist-win": "yarn build:prod && electron-builder --win --ia32",
+    "dist-mac": "yarn build:prod && electron-builder --mac",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "pack": "electron-builder --dir",
+    "eslint": "eslint src/**/*.{ts,tsx}",
+    "eslint:fix": "eslint src/**/*.{ts,tsx} --fix",
+    "prettier": "node ./scripts/prettier.js",
+    "lint-staged": "lint-staged"
+  },
+  "dependencies": {
+    "@craco/craco": "^6.0.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/md5": "^2.2.1",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-pdf": "^5.0.1",
+    "antd": "^4.10.3",
+    "antd-dayjs-webpack-plugin": "^1.0.1",
+    "antd-theme-generator": "^1.2.4",
+    "axios": "^0.20.0",
+    "compression-webpack-plugin": "^6.1.1",
+    "craco-alias": "^2.1.1",
+    "craco-less": "^1.17.0",
+    "crypto-js": "^4.0.0",
+    "css-loader": "^5.0.1",
+    "dayjs": "^1.9.7",
+    "electron-log": "^4.3.0",
+    "electron-updater": "^4.3.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.1",
+    "react-router-cache-route": "^1.10.0",
+    "react-router-dom": "^5.2.0",
+    "react-saga": "^0.3.1",
+    "react-scripts": "^4.0.1",
+    "redux": "^4.0.5",
+    "redux-saga": "^1.1.3",
+    "simple-progress-webpack-plugin": "^1.1.2",
+    "uglifyjs-webpack-plugin": "^2.2.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.10.5",
+    "@types/node": "^14.10.1",
+    "@types/qs": "^6.9.4",
+    "@types/react-redux": "^7.1.9",
+    "@types/react-router-dom": "^5.1.5",
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
+    "@typescript-eslint/parser": "^4.0.1",
+    "cross-env": "^7.0.2",
+    "electron": "9.2.1",
+    "electron-builder": "^22.8.0",
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.13",
+    "prettier": "^2.1.1",
+    "typescript": "^4.0.2"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "build": {
+    "appId": "com.xxxxx.app",
+    "electronDownload": {
+      "mirror": "https://npm.taobao.org/mirrors/electron/"
+    },
+    "copyright": "Copyright © 2019-2020 ${author}",
+    "extraMetadata": {
+      "main": "electron/main.js"
+    },
+    "directories": {
+      "output": "distElectron"
+    },
+    "files": [
+      "**/*",
+      "build/",
+      "build",
+      "electron/",
+      "!build/static/js/*.js.map",
+      "!src/"
+    ],
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "此处放你的electron升级的地址"
+      }
+    ],
+    "win": {
+      "icon": "electron/icon.ico",
+      "target": [
+        {
+          "target": "nsis"
+        }
+      ]
+    },
+    "mac": {
+      "icon": "electron/icon.icns",
+      "category": "your.app.category.type",
+      "target": [
+        "zip",
+        "dmg"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "electon-desktop",
+      "perMachine": true
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint"
+    ]
+  }
+}

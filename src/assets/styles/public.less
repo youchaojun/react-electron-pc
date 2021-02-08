@@ -1,0 +1,343 @@
+// 路由加载loading
+#loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  font-size: 20px;
+}
+
+// 钱的颜色
+.money {
+  color: @money-color;
+}
+
+.center {
+  width: 60px;
+  height: 40px;
+  position: fixed;
+  top: 55%;
+  left: 55%;
+  transform: translate(-45%, -45%);
+}
+
+.global-loading {
+  width: 80px;
+  height: 80px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px @box-shadow;
+  position: fixed;
+  background: @active-white;
+  top: 50%;
+  left: 45%;
+  transform: translate(50%, -60%);
+}
+
+.copy-right {
+  line-height: 16px;
+  bottom: 0;
+  padding: 5px 0;
+  background: none;
+  text-align: center;
+}
+
+&.ant-layout {
+  background-color: @container-background;
+}
+
+// table列表操作按钮（默认左边距）
+.table-action-r,
+.table-action-l {
+  display: flex;
+  margin-top: 10px;
+
+  .ant-btn {
+    margin-right: 10px;
+  }
+}
+
+// table列表操作按钮 右边距
+.table-action-r {
+  justify-content: flex-end;
+}
+
+.main-container {
+  height: calc(100vh - 120px);
+  overflow: auto;
+  position: relative;
+  background-color: @container-background;
+
+  .container-block {
+    background-color: @active-white;
+    margin: 10px;
+    border-radius: 2px;
+    box-shadow: 0 0 4px 1px @shadow-color;
+  }
+
+  .container-padding {
+    .container-block;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 0 0 4px 1px @shadow-color;
+  }
+
+  .container-top {
+    background-color: @active-white;
+    margin: 10px;
+    box-shadow: 0 0 4px 1px @shadow-color;
+  }
+}
+
+// 搜索样式
+.search-main {
+  background-color: @active-white;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 2px;
+
+  > * {
+    min-width: 160px;
+    margin-right: 10px;
+  }
+
+  .ant-input-search {
+    width: 200px;
+  }
+}
+
+// 搜索中带右边按钮的样式
+.search-has-add {
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  background-color: @active-white;
+  justify-content: space-between;
+
+  .search-main {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+// 百度地图去水印
+.anchorBL {
+  display: none;
+  // color: rgb(173, 252, 252);
+}
+
+// 表单flex布局
+.form-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+// 表单提交按钮样式
+.form-btn {
+  text-align: center;
+
+  .ant-btn {
+    margin: 0 5px;
+  }
+}
+
+// 滚动条样式
+::-webkit-scrollbar {
+  /*整体*/
+  width: 10px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  /*背景*/
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+  border-radius: 0;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  /*小块*/
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+  border: 2px solid transparent;
+}
+
+// 回到顶部按钮样式
+.anticon-vertical-align-top {
+  width: 40px;
+  height: 40px;
+  background: @text-color;
+  font-size: 24px;
+  line-height: 45px;
+  border-radius: 50%;
+
+  &:hover {
+    background: @heading-color;
+  }
+}
+
+// 弹框中的form表单布局 每行占两个item
+.modal-form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .ant-row {
+    width: 48%;
+    margin-right: 1%;
+  }
+}
+
+.user-overtime-action {
+  .ant-modal-confirm-body-wrapper {
+    .ant-modal-confirm-btns {
+      float: none;
+      text-align: center;
+    }
+  }
+}
+
+// 自定义electron菜单栏
+.electron-menu,
+.electron-menu-login {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  background: #34405a;
+  align-items: center;
+  color: @active-white;
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+  cursor: move;
+
+  .logo {
+    width: 140px;
+    padding: 15px;
+    flex-shrink: 0;
+  }
+
+  .system-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .list {
+      -webkit-app-region: no-drag;
+      line-height: 10px;
+      display: flex;
+      height: 50px;
+
+      div {
+        font-size: 16px;
+        cursor: pointer;
+
+        .line {
+          width: 100%;
+          height: 5px;
+        }
+
+        p {
+          padding: 0 10px;
+          margin-top: 16px;
+        }
+
+        &.active {
+          background: @text-color;
+        }
+      }
+    }
+  }
+
+  .electron-btn {
+    -webkit-app-region: no-drag;
+    width: 120px;
+    cursor: pointer;
+    font-size: 18px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 200;
+
+    .anticon {
+      margin: 20px 10px;
+    }
+  }
+}
+
+.electron-menu-login {
+  -webkit-app-region: no-drag;
+  color: @text-color;
+  background-color: @active-white;
+  justify-content: flex-end;
+
+  .anticon {
+    font-size: 18px;
+    margin: 20px;
+  }
+}
+
+// 错误页面
+.error-boundary {
+  height: 80vh;
+}
+
+.error {
+  color: @danger-color;
+}
+
+// modal弹框副标题
+.modal-subtitle {
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: normal;
+  color: @text-color-secondary;
+}
+
+// pdf预览翻页
+.pdf-preview {
+  width: 800px;
+  background-color: @active-white;
+  text-align: right;
+  height: 1100px;
+  overflow-x: hidden;
+  border-radius: 2px;
+  box-shadow: 0 0 4px 1px @shadow-color;
+
+  .react-pdf__Page__canvas,
+  .react-pdf__Page__textContent {
+    width: 800px !important;
+    height: 1100px !important;
+  }
+}
+
+// 图片删除按钮
+.close-image-btn {
+  position: relative;
+
+  .icon {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+    display: none;
+    text-align: right;
+    .anticon-close {
+      margin-right: 4px;
+      color: @active-white;
+    }
+  }
+
+  &:hover {
+    .icon {
+      display: block;
+    }
+  }
+}

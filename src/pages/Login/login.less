@@ -1,0 +1,98 @@
+.window-size {
+  width: 100%;
+  height: 100%;
+  .login-container {
+    margin: 0 auto;
+    width: 260px;
+    .tab {
+      display: flex;
+      font-size: 22px;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 16px;
+      color: @text-color-secondary;
+      li {
+        cursor: pointer;
+        p {
+          margin-bottom: 10px;
+        }
+        .active {
+          color: @text-color;
+        }
+        .line {
+          margin: 0 auto;
+          width: 60%;
+          height: 4px;
+          border-radius: 5px;
+        }
+      }
+    }
+    .login-form {
+      padding: 5px;
+      position: relative;
+      .action {
+        display: flex;
+        justify-content: space-between;
+        .forgetPwd,
+        .qrcode {
+          margin: 10px 0;
+          cursor: pointer;
+        }
+      }
+      .qrsacn {
+        .qr-image {
+          width: 258px;
+        }
+        .qr-code-backgorun {
+          position: absolute;
+          top: 0;
+          background-color: rgba(#ffffff, .9);
+          width: 260px;
+          height: 260px;
+          .reload {
+            .prompting {
+              font-size: 16px;
+            }
+            margin-top: 80px;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+          }
+        }
+      }
+      .prompting {
+        text-align: center;
+      }
+      .login-form-button {
+        width: 100%;
+      }
+    }
+    .login-verification {
+      display: flex;
+      justify-content: space-between;
+      .ant-input {
+        width: 150px;
+      }
+    }
+  }
+  .login-bottom {
+    text-align: center;
+    span {
+      margin: 0 4px;
+      cursor: pointer;
+    }
+    .version {
+      color: @disabled-color;
+    }
+  }
+}
+// 颜色选择
+.select-color {
+  display: flex;
+  .choice {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+}

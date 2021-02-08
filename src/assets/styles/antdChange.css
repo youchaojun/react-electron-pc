@@ -1,0 +1,34 @@
+/* 更改antd的颜色 label和table的header的颜色为黑色 */
+.ant-form-item-label label,
+.ant-table-thead tr th,
+.ant-modal-title {
+  color: rgba(0, 0, 0, 0.85) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: rgba(0, 0, 0, 0.85) !important;
+}
+
+.ant-image-preview-mask {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+}
+
+/* 隐藏antd中image中的眼睛 */
+.ant-image-mask-info {
+  display: none;
+}
+
+/* .ant-drawer {
+  height: calc(100% - 65px) !important;
+  margin-top: 50px;
+} */
+
+#root ::selection {
+  color: #fff;
+  background: rgb(67, 67, 68);
+}

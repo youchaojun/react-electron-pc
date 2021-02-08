@@ -1,0 +1,207 @@
+// sider样式
+.menu-sider {
+  padding-top: 10px;
+  z-index: 100;
+  .ant-layout-sider-children {
+    height: 100vh;
+    overflow: auto;
+  }
+}
+// 菜单头部
+.menu-top.ant-layout-header {
+  line-height: 50px;
+  .menu-header-top {
+    -webkit-app-region: no-drag;
+    background: #34405a;
+    color: @active-white;
+    // background: @active-white;
+    display: flex;
+    justify-content: space-between;
+    .left {
+      display: flex;
+      // margin: 20px 15px;
+      .anticon {
+        cursor: pointer;
+        margin-right: 20px;
+      }
+    }
+    .right {
+      min-width: 300px;
+      height: inherit;
+      display: flex;
+      line-height: 30px;
+      justify-content: flex-end;
+      div {
+        margin-left: 14px;
+        min-width: 30px;
+        cursor: pointer;
+
+        .anticon {
+          font-size: 22px;
+          color: @active-white;
+        }
+      }
+
+      .text {
+        display: flex;
+        padding-top: 10px;
+        p {
+          margin: 0 5px;
+        }
+      }
+
+      .user-icon {
+        width: 30px;
+        height: 30px;
+        margin: 10px;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        border: 1px solid @border-color;
+        background-size: cover;
+        background-position: 50%;
+        color: @text-color;
+        .user-message {
+          display: none;
+        }
+        .anticon {
+          font-size: 22px;
+          color: @text-color;
+        }
+        &:hover {
+          .user-message {
+            display: block;
+            width: 220px;
+            min-height: 200px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 100;
+
+            .user-container {
+              width: 220px;
+              border-radius: 8px;
+              background-color: @active-white;
+              box-shadow: 0px 1px 6px @box-shadow;
+              position: absolute;
+              right: 0;
+              top: 50px;
+              z-index: 10;
+
+              div {
+                margin-left: 0;
+                padding: 0 15px;
+                min-height: 40px;
+                line-height: 40px;
+                font-size: 14px;
+
+                &:first-child {
+                  margin-top: 20px;
+                }
+
+                span {
+                  padding: 0 10px;
+                }
+
+                .user-role-switch {
+                  padding: 4px 10px;
+                  text-align: center;
+                  color: @active-white;
+                  border-radius: 14px;
+                }
+
+                &:hover {
+                  background: @hover-color;
+                }
+              }
+            }
+            .go-out {
+              border-top: 1px solid @border-color;
+            }
+          }
+        }
+      }
+    }
+    .meissage-system,
+    .meissage-verify {
+      padding-top: 20px;
+      position: relative;
+    }
+  }
+}
+// 切换角色
+.switch-role {
+  .ant-radio-group {
+    width: 100%;
+    .switch-role-radio {
+      padding: 10px;
+      margin: 5px;
+      line-height: 40px;
+      &:hover {
+        background-color: @hover-color;
+      }
+    }
+  }
+}
+
+// 菜单切换
+.menu-tab {
+  height: 24px;
+  display: flex;
+  background-color: #15264d;
+  position: relative;
+  .menu-item {
+    position: absolute;
+    width: 110px;
+    height: 10px;
+    font-size: 12px;
+    border: 0px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 24px solid #415470;
+    line-height: 24px;
+    color: @active-white;
+    cursor: pointer;
+    &.active {
+      border-bottom: 24px solid @active-white;
+      color: #000;
+      &.ant-tag {
+        .ant-tag-close-icon {
+          color: #000;
+        }
+      }
+    }
+    &.ant-tag {
+      background: none;
+      .ant-tag-close-icon {
+        float: right;
+        // top: 10px;
+        line-height: 24px;
+        color: @active-white;
+      }
+    }
+  }
+}
+.dropdown-menu {
+  .ant-dropdown-menu-item{
+    font-size: 12px;
+    padding: 2px 20px;
+  }
+}
+
+// 菜单面包屑
+.ment-breadcrumb {
+  display: flex;
+  background-color: @active-white;
+  border-bottom: 1px solid @border-color;
+  .ant-breadcrumb-link {
+    font-size: 12px;
+  }
+  .action-btn {
+    .anticon {
+      font-size: 12px;
+      cursor: pointer;
+      margin:0 6px;
+      opacity: .9;
+    }
+  }
+}

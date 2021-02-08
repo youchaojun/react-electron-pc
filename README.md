@@ -1,0 +1,79 @@
+#### xx系统重构
+
+#### 安装依赖
+
+```
+  yarn
+  或
+  npm install
+```
+
+#### 启动页面项目
+
+```
+  yarn  start
+  或
+  npm run start
+```
+
+#### 启动 Electon
+
+```
+  yarn startE
+   或
+  npm run startE
+
+```
+
+#### 页面打包
+
+```
+  yarn build
+   或
+  npm run build
+
+```
+
+#### Electon 打包 (windows)
+
+```
+  yarn dist-win
+   或
+  npm run dist-win
+
+```
+
+#### Electon 打包 (mac)
+
+```
+  yarn dist-mac
+   或
+  npm run dist-mac
+
+```
+
+#### ESLint 检测错误
+
+```
+  yarn eslint
+   或
+  npm run eslint
+
+```
+
+#### ESLint 自动修复
+
+```
+  yarn eslint:fix
+   或
+  npm run eslint:fix
+
+```
+
+```
+  electron打包时候需要把package.json中加上
+
+  "homepage": "."
+```
+
+[更多项目介绍](./docs/项目简介.md)

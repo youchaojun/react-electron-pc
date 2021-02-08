@@ -1,0 +1,40 @@
+{
+  "extends": "./tsconfig.extend.json",
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "types": [],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "declaration": true,
+    "jsx": "react-jsx",
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": [
+    "src",
+    "src/utils",
+    "typings.d.ts",
+    "global.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "distElectron",
+    "mock",
+    "docs"
+  ]
+}
