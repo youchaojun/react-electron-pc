@@ -1,35 +1,33 @@
-  #### 颜色变量 
-  ```
-    // 全局主色
-    '@primary-color': '#41284f',
-    '@link-color': '#41284f',
-    '@heading-color': 'rgba(0, 0, 0, 0.85)',
-    '@text-color': 'rgba(0, 0, 0, 0.65)',
-    '@border-radius-base': '4px',
-    '@themeColor': '#40284d',
-    '@themeTextColor': '#292c31',
-    '@menuColor': '#40284d',
-    '@promptingColor': '#f5222d',
-    '@jiayunColor': '#292c31',
-    '@otherTextColor': '#2db7f5',
-    '@labelTextColor': '#849aae',
-    '@labelBackground': '#f4f7f9',
-    '@linkColor': '#f4a23a',
-    '@activeColor': '#fff',
-    '@borderColor': '#e8e8e8',
-    '@tagColorSystem': '#f4a23a',
-    '@tagColorVerify': '#87d068',
-    '@grenColor': '#348e0e',
-    '@boxShadow': 'rgb(154, 151, 151)',
-    '@remarkColor': 'rgb(154, 151, 151)',
-    '@hoverColor': '#e2f7fe',
-    '@warningColor': '#faad14',
-    '@dangerColor': '#ff4d4f',
-    '@tableHeaderColor': '#fafafa',
-    '@tableHeaderTextColor': 'rgba(0, 0, 0, 0.6)',
-    '@tableBodyTextColor': 'rgba(0, 0, 0, 0.65)',
-    '@imageActiveColor': 'rgba(0, 0, 0, 0.65)',
-    '@dailogColor': 'rgba(0, 0, 0, 0.4)',
-    '@backgroundColor': '#f0f2f5',
-    '@scrollMenuColor': '#c1c1c2',
-  ```
+#### 颜色变量
+
+```
+   // xx全局主色
+'@active-white': '#fff',
+'@container-background': '#f5f5f5',
+'@border-color': '#e8e8e8',
+'@box-shadow': 'rgba(0, 0, 0, 0.2)',
+// 标题色
+'@heading-color': 'rgba(0, 0, 0, 0.85)',
+// 主文本色
+'@text-color': 'rgba(0, 0, 0, 0.65)',
+// 次文本色
+'@text-color-secondary': 'rgba(0, 0, 0, 0.45)',
+// 失效色
+'@disabled-color': 'rgba(0, 0, 0, 0.25)',
+// hover颜色
+'@hover-color': '#e2f7fe',
+// 错误色
+'@danger-color': '#ff7875',
+// 警告色
+'@warning-color': '#faad14',
+// 成功色
+'@success-color': '#52c41a',
+// table头部颜色
+'@table-header': '#fafafa',
+// 红色（钱）
+'@money-color': '#d81e06',
+// 蓝色（一些图标颜色，不随主题变化的固定色）
+'@blue-color': '#0A8AF3',
+// 阴影颜色
+'@shadow-color': 'rgba(0, 0, 0, 0.06 )',
+```
