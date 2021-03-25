@@ -1,6 +1,7 @@
 import React, { FC, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
+import './home.less';
 
 const HomePage: FC = (): ReactElement => {
   return (
@@ -36,6 +37,34 @@ const HomePage: FC = (): ReactElement => {
       </Button>
       <Button>
         <Link to="/children">子路由</Link>
+      </Button>
+      <Button>
+        <Link
+          to={{
+            pathname: '/iframeTest/101',
+            state: {
+              tabName: '测试iframe1',
+              tabMore: true,
+              id: 101,
+            },
+          }}
+        >
+          测试iframe1
+        </Link>
+      </Button>
+      <Button>
+        <Link
+          to={{
+            pathname: '/iframeTest/102',
+            state: {
+              tabName: '测试iframe2',
+              tabMore: true,
+              id: 102,
+            },
+          }}
+        >
+          测试iframe2
+        </Link>
       </Button>
     </div>
   );

@@ -1,0 +1,15 @@
+
+node_modules
+
+# 页面打包文件
+build
+# electron打包文件
+distElectron
+# public/*
+
+*/.DS_Store
+*/color.less
+*/color.js
+/.eslintcache
+/httpTest
+node_modules

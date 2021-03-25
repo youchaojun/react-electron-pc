@@ -5,6 +5,7 @@ const Home = lazy(() => import('@/pages/Home'));
 const HomeChildren = lazy(() => import('@/pages/Home/HomeChildren'));
 const ScrollTop = lazy(() => import('@/pages/ScrollTop'));
 const PageCache = lazy(() => import('@/pages/PageCache'));
+const IframeTest = lazy(() => import('@/pages/IframeTest'));
 
 export const home: RoutersConfigIF[] = [
   {
@@ -34,6 +35,16 @@ export const home: RoutersConfigIF[] = [
     component: ScrollTop,
     exact: true,
     cache: true,
+    tabMore: true,
+  },
+  {
+    name: '多个页面',
+    path: '/iframeTest/:id',
+    basePath: '/iframeTest',
+    component: IframeTest,
+    exact: true,
+    cache: false,
+    tabMore: true,
   },
   {
     name: '页面缓存',

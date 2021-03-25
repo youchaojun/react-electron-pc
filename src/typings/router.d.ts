@@ -23,6 +23,7 @@ export interface RoutersConfigIF extends RoutersModelIF {
   exact: boolean;
   cache: boolean;
   basePath: string;
+  tabMore?: boolean;
   state?: RouterStateIF;
   children?: RoutersConfigIF[];
 }
