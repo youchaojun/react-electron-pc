@@ -10,12 +10,12 @@ react + react-router-dom + typescript + react-redux + redux-saga + antd + react-
 
 ### 应用场景
 
-- tab 多窗口
+- tab 多窗口  
   由于用 electron 开发应用，需要打开多个窗口时，如果用 a 标签的\_blank 会弹出一个子窗口，而不是新 tab。所以需要我们手写 tab，要想实现 tab 之前相互切换并缓存之前的状态，则就会需要用到路由缓存，这里用 [react-router-cache-route](https://github.com/CJY0208/react-router-cache-route)
-- 改写 electron 菜单栏
+- 改写 electron 菜单栏  
   electron 有一个默认的菜单栏，会是一个白边，我们需要在菜单栏上加入基本信息，所以需要改写。
   react 组件与 electron 同学需要用到 ipcMain 和 ipcRenderer
-- 更改主题颜色
+- 更改主题颜色  
 可以实现实时更改主题颜色
 ### 项目结构
 
@@ -62,7 +62,7 @@ react + react-router-dom + typescript + react-redux + redux-saga + antd + react-
 
 ### 使用说明
 
-- 接口配置
+- 接口配置  
   提供四种配置，dev,BUG,测试，生产
   分别在文件.env 中配置
 
@@ -74,7 +74,7 @@ REACT_APP_PROD = http://xxxxxxxxx/
 REACT_APP_VERSION=$npm_package_version
 ```
 
-- 启动说明
+- 启动说明  
 
 ```
 yarn // 安装依赖
@@ -85,13 +85,13 @@ yarn dist-win // window 打包
 yarn dist-mac // mac 打包
 ```
 
-- electron 配置
+- electron 配置  
   electron 配置文件在 electron/main.js
 
 - less 变量配置
   less 变量配置在 config/lessGlobal.js
 
-- 路由配置
+- 路由配置  
 路由配置放在routers中，menuRouter为菜单的配置
 ```
 {
