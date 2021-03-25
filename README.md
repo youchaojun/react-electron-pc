@@ -14,7 +14,7 @@ react + react-router-dom + typescript + react-redux + redux-saga + antd + react-
   由于用 electron 开发应用，需要打开多个窗口时，如果用 a 标签的\_blank 会弹出一个子窗口，而不是新 tab。所以需要我们手写 tab，要想实现 tab 之前相互切换并缓存之前的状态，则就会需要用到路由缓存，这里用 [react-router-cache-route](https://github.com/CJY0208/react-router-cache-route)
 - 改写 electron 菜单栏  
   electron 有一个默认的菜单栏，会是一个白边，我们需要在菜单栏上加入基本信息，所以需要改写。
-  react 组件与 electron 同学需要用到 ipcMain 和 ipcRenderer
+  react 组件与 electron 通讯需要用到 ipcMain 和 ipcRenderer
 - 更改主题颜色  
 可以实现实时更改主题颜色
 ### 项目结构
