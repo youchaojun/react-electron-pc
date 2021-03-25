@@ -15,7 +15,8 @@ react + react-router-dom + typescript + react-redux + redux-saga + antd + react-
 - 改写 electron 菜单栏
   electron 有一个默认的菜单栏，会是一个白边，我们需要在菜单栏上加入基本信息，所以需要改写。
   react 组件与 electron 同学需要用到 ipcMain 和 ipcRenderer
-
+- 更改主题颜色
+可以实现实时更改主题颜色
 ### 项目结构
 
 ```
