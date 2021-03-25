@@ -1,17 +1,7 @@
 import { UserInfoIF } from '@/typings/login';
 
 let userInfos: UserInfoIF = {
-  avatar: '',
-  currentPermissions: ['home'],
-  currentRoleId: 0,
-  currentRoleName: '',
-  userId: 0,
-  orgId: 0,
-  orgName: '',
-  orgFullName: '',
-  username: '',
-  currentRoleCode: '',
-  jobNo: '',
+  id: 100,
 };
 
 export interface LoginStateIF {

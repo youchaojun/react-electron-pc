@@ -5,12 +5,12 @@ import { CHANGE_USER_INFO } from '../actionTypes';
 
 export interface UnitListGetSagaIF {
   type: CHANGE_USER_INFO;
-  unitList: any[];
+  unitList: any;
 }
 // 测试saga
 function* unitListGet({ parmas }: any) {
   try {
-    const res = yield homeApi.test({ params: parmas });
+    const res: unknown = yield homeApi.test({ params: parmas });
     const action: UnitListGetSagaIF = {
       type: CHANGE_USER_INFO,
       unitList: res,

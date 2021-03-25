@@ -23,10 +23,10 @@ const TopSider: FC = (): ReactElement => {
           <div
             className="user-icon"
             style={{
-              backgroundImage: `url('${userInfo.avatar ? userInfo.avatar : ''}')`,
+              backgroundImage: '',
             }}
           >
-            <UserModal userName={userInfo.username} />
+            <UserModal userName="xxx" />
           </div>
         </div>
       ) : null}
