@@ -12,6 +12,7 @@ export interface LoginResIF {
 // 当前角色信息
 export interface UserInfoIF {
   id: number;
+  currentPermissions: string[];
 }
 export interface TitleIF {
   id: number;

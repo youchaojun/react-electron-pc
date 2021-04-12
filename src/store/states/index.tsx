@@ -2,6 +2,7 @@ import { UserInfoIF } from '@/typings/login';
 
 let userInfos: UserInfoIF = {
   id: 100,
+  currentPermissions: ['home'],
 };
 
 export interface LoginStateIF {
