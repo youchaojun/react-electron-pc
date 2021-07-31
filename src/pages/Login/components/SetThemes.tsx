@@ -8,6 +8,16 @@ const SetThemes: FC = (): ReactElement => {
     }
     themeList[index].select = true;
     localStorage.setItem('themeCount', `${index}`);
+    console.log('%c ====', 'color:green');
+    const cssGet = window.less.cache.getCSS();
+    console.log(window.less.cache);
+    console.log(cssGet);
+
+    window.less.cache.getCSS(function (a: any, b: any, c: any) {
+      console.log(a);
+      console.log(b);
+      console.log(c);
+    });
     window.less
       .modifyVars(themeList[index])
       .then(() => {
