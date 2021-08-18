@@ -3,6 +3,8 @@ import { CodeMessage } from './codeMessage';
 import { message, notification } from 'antd';
 import { HttpCode, ResponseData } from '@/typings/common';
 import { hideLoading, showLoading } from './httpLoading.js';
+const CancelToken = axios.CancelToken;
+const source = CancelToken.source();
 
 const openNotificationWithIcon = () => {
   notification.error({
@@ -42,40 +44,8 @@ interface AxiosParams extends HeadersModelIF {
  * @return 配置baseUrl
  */
 const getBaseUrl = (): string => {
-  let baseUrl: string;
-  // 判断生产环境和测试环境
   const env = process.env;
-  const type = env.REACT_APP_ENV;
-  // 判断浏览器(是electron才能用生产接口)
-  // const isElectron = navigator.userAgent.includes('Electron');
-
-  // console.log(isElectron);
-  // console.log(type);
-
-  switch (type) {
-    case 'dev':
-      // 测试环境
-      baseUrl = env.REACT_APP_DEV!;
-      break;
-    case 'test':
-      // 测试环境
-      baseUrl = env.REACT_APP_TEST!;
-      break;
-    case 'bug':
-      // bug环境
-      baseUrl = env.REACT_APP_BUG!;
-      break;
-    case 'prod':
-      // 生产环境
-      baseUrl = env.REACT_APP_PROD!;
-      break;
-    default:
-      // 开发环境
-      // baseUrl = env.REACT_APP_TEST!;
-      // baseUrl = env.REACT_APP_BUG!;
-      baseUrl = '/api';
-      break;
-  }
+  const baseUrl = env.REACT_APP_BASE_URL!;
   return baseUrl;
 };
 /**
@@ -177,6 +147,7 @@ class JiayunAxios {
         url,
         [data]: params,
         headers,
+        cancelToken: source.token,
       })
         .then((res: AxiosResponse<ResponseData<T>>) => {
           const data = res.data;
@@ -329,5 +300,5 @@ class JiayunAxios {
 }
 
 const JYAxios = new JiayunAxios(getBaseUrl(), 10000);
-
-export { JYAxios };
+const cancel = (val: string | undefined): void => source.cancel(val);
+export { JYAxios, cancel };

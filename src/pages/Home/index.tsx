@@ -1,9 +1,22 @@
-import React, { FC, ReactElement } from 'react';
+import React, { FC, ReactElement, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
+import { homeHouse } from '@/services/home/houseExamine';
+import { cancel } from '@/services/axios';
 import './home.less';
 
 const HomePage: FC = (): ReactElement => {
+  useEffect(() => {
+    homeHouse.examineList({}).then((res) => {
+      console.log(res);
+    });
+    homeHouse.examineList2({}).then((res) => {
+      console.log(res);
+    });
+    setTimeout(() => {
+      cancel('取消');
+    }, 100);
+  }, []);
   return (
     <div className="container-padding">
       <p>首页</p>
