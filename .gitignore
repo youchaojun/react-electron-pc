@@ -8,7 +8,7 @@ distElectron
 # public/*
 
 */.DS_Store
-# */color.less
+*/color.less
 */color.js
 /.eslintcache
 /httpTest
