@@ -48,7 +48,7 @@ const createWindow = () => {
 
   let startUrl = '';
   if (!app.isPackaged) {
-    startUrl = 'http://localhost:3001';
+    startUrl = 'http://localhost:3000';
   } else {
     startUrl = url.format({
       pathname: path.join(__dirname, './loading.html'),

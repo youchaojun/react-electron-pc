@@ -15,6 +15,7 @@ import { getParentRouter } from '@/routers/routersCommon';
 
 const MenuTab = (): ReactElement => {
   const history = useHistory();
+
   const location = useLocation<RouterStateIF>();
   const dispatch = useDispatch();
   const result = useSelector<PublicReducerIF, PublicStateIF>((state) => state.publicReducer);
