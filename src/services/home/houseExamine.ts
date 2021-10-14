@@ -4,17 +4,17 @@ import { JYAxios } from '../axios';
 class HomeHouse {
   examineList({ params }: HttpParams<any>): Promise<any> {
     return JYAxios.axiosPost({
-      url: '/demo',
+      url: '/youn/test',
       type: 'json',
-      isLoading: true,
+      isLoading: false,
       params,
     });
   }
   examineList2({ params }: HttpParams<any>): Promise<any> {
     return JYAxios.axiosPost({
-      url: '/demo',
+      url: '/youn/test',
       type: 'json',
-      isLoading: true,
+      isLoading: false,
       params,
     });
   }

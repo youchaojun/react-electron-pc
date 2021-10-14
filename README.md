@@ -63,14 +63,11 @@ react + react-router-dom + typescript + react-redux + redux-saga + antd + react-
 ### 使用说明
 
 - 接口配置  
-  提供四种配置，dev,BUG,测试，生产
+  提供3种配置，dev,测试，生产
   分别在文件.env 中配置
 
 ```
-REACT_APP_DEV = http://xxxxxxxxx/
-REACT_APP_BUG = http://xxxxxxxxx/
-REACT_APP_TEST = http://xxxxxxxxx/
-REACT_APP_PROD = http://xxxxxxxxx/
+REACT_APP_URL = http://xxxxxxxxx/
 REACT_APP_VERSION=$npm_package_version
 ```
 

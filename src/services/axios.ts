@@ -1,10 +1,10 @@
-import axios, { AxiosInstance, AxiosResponse, AxiosRequestConfig } from 'axios';
+import axios, { AxiosInstance, AxiosResponse, AxiosRequestConfig, Canceler } from 'axios';
 import { CodeMessage } from './codeMessage';
 import { message, notification } from 'antd';
 import { HttpCode, ResponseData } from '@/typings/common';
 import { hideLoading, showLoading } from './httpLoading.js';
 const CancelToken = axios.CancelToken;
-const source = CancelToken.source();
+let cancel: Canceler[] = [];
 
 const openNotificationWithIcon = () => {
   notification.error({
@@ -147,7 +147,9 @@ class JiayunAxios {
         url,
         [data]: params,
         headers,
-        cancelToken: source.token,
+        cancelToken: new CancelToken(function executor(c: Canceler) {
+          cancel.push(c);
+        }),
       })
         .then((res: AxiosResponse<ResponseData<T>>) => {
           const data = res.data;
@@ -299,6 +301,5 @@ class JiayunAxios {
   }
 }
 
-const JYAxios = new JiayunAxios(getBaseUrl(), 10000);
-const cancel = (val: string | undefined): void => source.cancel(val);
+const JYAxios = new JiayunAxios(getBaseUrl(), 100000);
 export { JYAxios, cancel };

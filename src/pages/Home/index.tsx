@@ -7,18 +7,46 @@ import './home.less';
 
 const HomePage: FC = (): ReactElement => {
   useEffect(() => {
+    // homeHouse.examineList({}).then((res) => {
+    //   console.log(res);
+    // });
+    // homeHouse.examineList2({}).then((res) => {
+    //   console.log(res);
+    // });
+    // setTimeout(() => {
+    //   cancel('取消');
+    // }, 100);
+  }, []);
+
+  /**
+   * 开始请求
+   */
+
+  function requestStart() {
     homeHouse.examineList({}).then((res) => {
       console.log(res);
     });
     homeHouse.examineList2({}).then((res) => {
       console.log(res);
     });
-    setTimeout(() => {
-      cancel('取消');
-    }, 100);
-  }, []);
+  }
+
+  /**
+   * 取消请求
+   */
+
+  function canelRequest() {
+    for (const val of cancel) {
+      val('取消');
+    }
+  }
+
   return (
     <div className="container-padding">
+      <Button type="primary" onClick={requestStart}>
+        开始请求
+      </Button>
+      <Button onClick={canelRequest}>取消请求</Button>
       <p>首页</p>
       <Button>
         <Link
