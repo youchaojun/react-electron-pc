@@ -113,6 +113,5 @@ yarn dist-mac // mac 打包
   },
 ```
 
-后续在更新更多使用方法，也欢迎大家提issue
 
 [guthub 地址](https://github.com/youchaojun/react-electron-pc)
